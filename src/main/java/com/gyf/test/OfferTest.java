@@ -1,6 +1,9 @@
 package com.gyf.test;
 
-import com.gyf.offer.Q30_MinStack;
+import com.gyf.offer.*;
+import com.gyf.offer.util.ListNode;
+import com.gyf.offer.util.Node;
+import com.gyf.offer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +22,7 @@ public class OfferTest {
 
     @Test
     public void testQ30() {
-        Q30_MinStack minStack = new Q30_MinStack();
+        Q30_Solution minStack = new Q30_Solution();
         minStack.push(-2);
         minStack.push(0);
         minStack.push(-3);
@@ -27,5 +30,58 @@ public class OfferTest {
         minStack.pop();
         log.info("" + minStack.top());     // --> 返回 0.
         log.info("" + minStack.min());   //--> 返回 -2.
+    }
+
+    @Test
+    public void testQ03() {
+        Q03_Solution q03_solution = new Q03_Solution();
+        int[] arr = {2, 3, 1, 0, 2, 5, 3};
+        System.out.println(q03_solution.findRepeatNumber(arr));
+    }
+
+    @Test
+    public void testQ06() {
+        Q06_Solution q06_solution = new Q06_Solution();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(3);
+        head.next.next = new ListNode(2);
+        ListNode tmp = head;
+        tmp = tmp.next;
+        System.out.println(tmp.val);
+        System.out.println(head.val);
+//        System.out.println(JSON.toJSONString(q06_solution.reversePrint(head)));
+    }
+
+    @Test
+    public void testQ24() {
+        Q24_Solution q24_solution = new Q24_Solution();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        ListNode tmp = q24_solution.reverseList(head);
+        Util.logList(tmp);
+    }
+
+    @Test
+    public void testQ35() {
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = null;
+        n1.random = null;
+        n2.random = n1;
+        n3.random = n2;
+        n4.random = n4;
+        Q35_Solution q35_solution = new Q35_Solution();
+        Util.logNode(n1);
+        Node node = q35_solution.copyRandomList(n1);
+        System.out.println("-----------------------------------------");
+        Util.logNode(node);
     }
 }

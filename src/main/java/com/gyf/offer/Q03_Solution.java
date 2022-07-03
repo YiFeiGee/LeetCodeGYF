@@ -1,11 +1,9 @@
 package com.gyf.offer;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,9 +18,39 @@ import java.util.stream.Stream;
 @Slf4j
 public class Q03_Solution {
 
-    public int findRepeatNumber(int[] nums) {
+    public int findRepeatNumber1(int[] nums) {
         List<Integer> collect = Arrays.stream(nums).boxed().sorted().collect(Collectors.toList());
-        log.info(JSON.)
+        log.info(JSON.toJSONString(collect));
+        int x = 0;
+        for (int i = 1; i < collect.size(); i++) {
+            if (Objects.equals(collect.get(i),collect.get(i-1))) {
+                x = collect.get(i);
+                break;
+            }
+        }
+        return x;
+    }
+
+    /**
+     * i和nums[i]对应上，如果对不上，就进行交换，交换过程中如果发生nums[nums[i]] == nums[i]，则说明重复了
+     * @param nums
+     * @return
+     */
+    public int findRepeatNumber(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i) {
+                // 交换直至相等 把下标为i和nums[i]的值交互
+                while (nums[i] != i) {
+                    if (nums[nums[i]] == nums[i]) {
+                        return nums[i];
+                    }
+                    int x = nums[nums[i]];
+                    nums[nums[i]] = nums[i];
+                    nums[i] = x;
+                }
+            }
+        }
+        return 0;
     }
 
 }

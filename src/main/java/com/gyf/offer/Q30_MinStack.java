@@ -1,37 +1,38 @@
 package com.gyf.offer;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class Q30_MinStack {
     /** initialize your data structure here. */
 
-    public Integer min;
     public Deque<Integer> stack;
+    public Deque<Integer> minStack;
 
     public Q30_MinStack() {
-        min = 0;
         stack = new LinkedList<>();
+        minStack = new LinkedList<>();
+        minStack.offerLast(Integer.MAX_VALUE);
     }
 
     public void push(int x) {
-        if (x < min) {
-            min = x;
-        }
         stack.offerLast(x);
+        minStack.offerLast(Math.min(minStack.peekLast(),x));
     }
 
     public void pop() {
-        int pop = stack.pollLast();
-        if (pop)
+        stack.pollLast();
+        minStack.pollLast();
     }
 
     public int top() {
-        return stack.getLast();
+        return stack.peekLast();
     }
 
     public int min() {
-        return min;
+        return minStack.peekLast();
     }
 }
 

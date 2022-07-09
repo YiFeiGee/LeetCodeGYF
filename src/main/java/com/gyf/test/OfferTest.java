@@ -1,5 +1,6 @@
 package com.gyf.test;
 
+import com.alibaba.fastjson.JSON;
 import com.gyf.offer.*;
 import com.gyf.offer.util.ListNode;
 import com.gyf.offer.util.Node;
@@ -7,8 +8,8 @@ import com.gyf.offer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class OfferTest {
@@ -83,5 +84,25 @@ public class OfferTest {
         Node node = q35_solution.copyRandomList(n1);
         System.out.println("-----------------------------------------");
         Util.logNode(node);
+    }
+
+
+    @Test
+    public void testListArray() {
+        List<String> list = new ArrayList<>(Arrays.asList("123","345"));
+        Object[] objects = list.toArray();
+        String[] strings = list.toArray(new String[0]);
+        List<Integer> integerList = new ArrayList<>(Arrays.asList(1,2,3,4));
+        Object[] objects1 = integerList.toArray();
+        integerList.toArray(new Integer[0]);
+    }
+
+    @Test
+    public void testQ04() {
+        int[][] matrix = {
+                {-5}
+        };
+        Q04_Solution q04_solution = new Q04_Solution();
+        q04_solution.findNumberIn2DArray(matrix, -10);
     }
 }

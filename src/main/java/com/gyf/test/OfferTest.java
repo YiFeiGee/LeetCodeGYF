@@ -4,12 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.gyf.offer.*;
 import com.gyf.offer.util.ListNode;
 import com.gyf.offer.util.Node;
+import com.gyf.offer.util.TreeNode;
 import com.gyf.offer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Slf4j
 public class OfferTest {
@@ -104,5 +104,17 @@ public class OfferTest {
         };
         Q04_Solution q04_solution = new Q04_Solution();
         q04_solution.findNumberIn2DArray(matrix, -10);
+    }
+
+    @Test
+    public void testQ32() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        Q32_Solution_3 q32_solution3 = new Q32_Solution_3();
+
+        log.info(JSON.toJSONString(q32_solution3.levelOrder(root)));
     }
 }

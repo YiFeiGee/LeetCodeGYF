@@ -6,6 +6,7 @@ import java.util.Objects;
 
 @Slf4j
 public class Util {
+    public static StringBuilder treeSb;
     public static void logList(ListNode head) {
         while (head != null) {
             log.info(head.val + " ");
@@ -24,5 +25,23 @@ public class Util {
             log.info(""+n1.val+"----"+randomVal);
             n1 = n1.next;
         }
+    }
+
+    public static String logTreeFirstOrder(TreeNode n1) {
+        treeSb = new StringBuilder();
+        if (Objects.isNull(n1)) {
+            return "";
+        }
+        firstOrder(n1);
+        return treeSb.toString();
+    }
+
+    private static void firstOrder(TreeNode n1) {
+        if (Objects.isNull(n1)) {
+            return;
+        }
+        treeSb.append(n1.val);
+        firstOrder(n1.left);
+        firstOrder(n1.right);
     }
 }

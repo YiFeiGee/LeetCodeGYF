@@ -117,4 +117,130 @@ public class OfferTest {
 
         log.info(JSON.toJSONString(q32_solution3.levelOrder(root)));
     }
+
+    @Test
+    public void testQ26() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(5);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(2);
+
+        TreeNode child = new TreeNode(4);
+        child.left = new TreeNode(1);
+        Q26_Solution q26_solution = new Q26_Solution();
+        log.info(JSON.toJSONString(q26_solution.isSubStructure(root,child)));
+    }
+
+    @Test
+    public void testQ27() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(5);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(2);
+        log.info(Util.logTreeFirstOrder(root));
+        Q27_Solution q27_solution = new Q27_Solution();
+        TreeNode treeNode = q27_solution.mirrorTree(root);
+        log.info(JSON.toJSONString(Util.logTreeFirstOrder(treeNode)));
+    }
+
+    @Test
+    public void testQ28() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(4);
+        root.left.left = new TreeNode(1);
+        root.right.left = new TreeNode(1);
+        log.info(Util.logTreeFirstOrder(root));
+        Q28_Solution q28_solution = new Q28_Solution();
+        log.info(JSON.toJSONString(q28_solution.isSymmetric(root)));
+    }
+
+    @Test
+    public void testQ10_1() {
+        Q10_Solution_1 q10_solution1 = new Q10_Solution_1();
+        log.info(q10_solution1.fib(100)+"");
+    }
+
+    @Test
+    public void testQ10_2() {
+        Q10_Solution_2 q10_solution_2 = new Q10_Solution_2();
+        log.info(String.valueOf(q10_solution_2.numWays(5)));
+    }
+
+    @Test
+    public void testQ63() {
+        Q63_Solution q63_solution = new Q63_Solution();
+        int[] x = {7,1,5,3,6,4};
+        log.info(String.valueOf(q63_solution.maxProfit(x)));
+    }
+
+    @Test
+    public void testQ42() {
+        Q42_Solution q42_solution = new Q42_Solution();
+        int[] x = {-2,1,-3,4,-1,2,1,-5,4};
+        log.info(String.valueOf(q42_solution.maxSubArray(x)));
+    }
+
+    @Test
+    public void testQ47() {
+        Q47_Solution q47_solution = new Q47_Solution();
+        int[][] x = {
+                {1,3,1},
+                {1,5,1},
+                {4,2,1}
+        };
+        log.info(String.valueOf(q47_solution.maxValue(x)));
+    }
+
+    @Test
+    public void testQ46() {
+        Q46_Solution q46_solution = new Q46_Solution();
+        int i = q46_solution.translateNum(12258);
+        log.info(String.valueOf(i));
+    }
+
+    @Test
+    public void testQ48() {
+        Q48_Solution q48_solution = new Q48_Solution();
+        log.info(String.valueOf(q48_solution.lengthOfLongestSubstring1("abba")));
+    }
+
+    @Test
+    public void testQ18() {
+        Q18_Solution q18_solution = new Q18_Solution();
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(5);
+        head.next.next = new ListNode(1);
+        head.next.next.next = new ListNode(8);
+        Util.logList(head);
+        q18_solution.deleteNode(head, 5);
+        Util.logList(head);
+    }
+
+    @Test
+    public void testQ22() {
+        Q22_Solution q22_solution = new Q22_Solution();
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(5);
+        head.next.next = new ListNode(1);
+        head.next.next.next = new ListNode(8);
+        Util.logList(head);
+        ListNode kthFromEnd = q22_solution.getKthFromEnd(head, 2);
+        Util.logList(kthFromEnd);
+    }
+
+    @Test
+    public void testQ25() {
+        Q25_Solution q25_solution = new Q25_Solution();
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(2);
+        l1.next.next = new ListNode(4);
+        ListNode l2 = new ListNode(1);
+        l2.next = new ListNode(3);
+        l2.next.next = new ListNode(4);
+        ListNode listNode = q25_solution.mergeTwoLists(l1, l2);
+        Util.logList(listNode);
+    }
 }

@@ -1,7 +1,5 @@
 package com.gyf.offer;
 
-import sun.util.resources.cldr.hy.CurrencyNames_hy;
-
 import java.util.*;
 
 public class Q50_Solution {

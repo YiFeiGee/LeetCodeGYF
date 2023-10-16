@@ -243,4 +243,9 @@ public class OfferTest {
         ListNode listNode = q25_solution.mergeTwoLists(l1, l2);
         Util.logList(listNode);
     }
+
+    @Test
+    public void test26() {
+        log.info("hello world");
+    }
 }

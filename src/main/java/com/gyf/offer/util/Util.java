@@ -27,6 +27,16 @@ public class Util {
         }
     }
 
+    public static ListNode getListByLength(Integer len) {
+        ListNode head = new ListNode(1);
+        ListNode tmp = head;
+        for (int i = 2; i <= len; i++) {
+            tmp.next = new ListNode(i);
+            tmp = tmp.next;
+        }
+        return head;
+    }
+
     public static String logTreeFirstOrder(TreeNode n1) {
         treeSb = new StringBuilder();
         if (Objects.isNull(n1)) {

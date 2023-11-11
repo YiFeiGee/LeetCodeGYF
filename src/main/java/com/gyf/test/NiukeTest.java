@@ -3,9 +3,13 @@ package com.gyf.test;
 import com.alibaba.fastjson.JSON;
 import com.gyf.niuke.*;
 import com.gyf.offer.util.ListNode;
+import com.gyf.offer.util.TreeNode;
 import com.gyf.offer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+
+import java.util.Deque;
+import java.util.LinkedList;
 
 @Slf4j
 public class NiukeTest {
@@ -30,7 +34,7 @@ public class NiukeTest {
     public void testBM3() {
         ListNode list = Util.getListByLength(7);
         BM3 bm3 = new BM3();
-        ListNode listNode = bm3.reverseKGroup(list, 7);
+        ListNode listNode = bm3.reverseKGroup(list, 3);
         Util.logList(listNode);
     }
 
@@ -76,6 +80,49 @@ public class NiukeTest {
         String s2 = "2.0.0.0";
 //        System.out.println(JSON.toJSONString(s1.split("\\.")));
         log.info("result={}", bm22.compare(s1,s2));
+    }
+
+    @Test
+    public void testBM23() {
+        BM23 bm23 = new BM23();
+        TreeNode root = Util.getSimpleTree();
+        log.info("result={}", JSON.toJSONString(bm23.preorderTraversal(root)));
+    }
+
+    @Test
+    public void testBM24() {
+        BM24 bm24 = new BM24();
+        TreeNode tree = Util.getSimpleTree();
+        log.info("result={}", JSON.toJSONString(bm24.inorderTraversal(tree)));
+    }
+
+    @Test
+    public void testBM25() {
+        BM25 bm25 = new BM25();
+        TreeNode tree = Util.getSimpleTree();
+        log.info("result={}", JSON.toJSONString(bm25.postorderTraversal(tree)));
+    }
+
+    @Test
+    public void testBM26() {
+//        BM26 bm26 = new BM26();
+//        TreeNode tree = Util.getSimpleTree();
+//        log.info("result={}", JSON.toJSONString(bm26.levelOrder(tree)));
+
+    }
+
+    @Test
+    public void testBM27() {
+        BM27 bm27 = new BM27();
+        TreeNode tree = Util.getSimpleTree();
+        log.info("result={}", JSON.toJSONString(bm27.Print(tree)));
+    }
+
+    @Test
+    public void testBM28() {
+        BM28 bm28 = new BM28();
+        TreeNode tree = Util.getSimpleTree();
+        log.info("result={}", bm28.maxDepth(tree));
     }
 
 

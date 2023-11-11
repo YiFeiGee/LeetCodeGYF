@@ -1,5 +1,6 @@
 package com.gyf.offer.util;
 
+import cn.hutool.core.lang.tree.Tree;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
@@ -53,5 +54,15 @@ public class Util {
         treeSb.append(n1.val);
         firstOrder(n1.left);
         firstOrder(n1.right);
+    }
+
+    public static TreeNode getSimpleTree() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.left.right.left = new TreeNode(6);
+        return root;
     }
 }

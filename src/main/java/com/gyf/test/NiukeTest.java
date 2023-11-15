@@ -125,5 +125,67 @@ public class NiukeTest {
         log.info("result={}", bm28.maxDepth(tree));
     }
 
+    @Test
+    public void testBM29() {
+        BM29 bm29 = new BM29();
+        TreeNode treeNode = Util.getSimpleTree();
+        log.info("result={}", bm29.hasPathSum(treeNode, 13));
+    }
+
+    
+    @Test
+    public void testBM30() {
+//        BM30 bm30 = new BM30();
+//        TreeNode simpleBalanceTree = Util.getSimpleBalanceTree();
+//        TreeNode convert = bm30.Convert(simpleBalanceTree);
+//        TreeNode tmp = convert;
+//        while (tmp.right != null) {
+//            log.info("tmp={}", tmp.val);
+//            tmp = tmp.right;
+//        }
+//        log.info("--------------------------------------------");
+//        while (tmp != null) {
+//            log.info("reverse,tmp={}", tmp.val);
+//            tmp = tmp.left;
+    }
+
+    @Test
+    public void BM31() {
+        BM31 bm31 = new BM31();
+        TreeNode symmetryTree = Util.getSymmetryTree();
+        log.info("result={}", bm31.isSymmetrical(symmetryTree));
+    }
+
+    @Test
+    public void BM32() {
+        BM32 bm32 = new BM32();
+        TreeNode root1 = Util.getSimpleTree();
+        TreeNode root2 = Util.getRightTree();
+        TreeNode treeNode = bm32.mergeTrees(root1, root2);
+        log.info("result={}",Util.logTreeFirstOrder(treeNode));
+    }
+
+    @Test
+    public void BM33() {
+        BM33 bm33 = new BM33();
+        TreeNode tree = Util.getSimpleTree();
+        TreeNode mirror = bm33.Mirror(tree);
+        log.info("result={}", Util.logTreeFirstOrder(mirror));
+    }
+
+    @Test
+    public void BM34() {
+        BM34 bm34 = new BM34();
+        TreeNode balanceTree = Util.getSimpleTree();
+        log.info("result={}", bm34.isValidBST(balanceTree));
+    }
+
+    @Test
+    public void BM36() {
+        BM36 bm36 = new BM36();
+        TreeNode notBalancetree = Util.getSimpleBalanceTree();
+        log.info("result={}", bm36.IsBalanced_Solution(notBalancetree));
+    }
+
 
 }

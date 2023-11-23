@@ -8,8 +8,7 @@ import com.gyf.offer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.*;
 
 @Slf4j
 public class NiukeTest {
@@ -185,6 +184,34 @@ public class NiukeTest {
         BM36 bm36 = new BM36();
         TreeNode notBalancetree = Util.getSimpleBalanceTree();
         log.info("result={}", bm36.IsBalanced_Solution(notBalancetree));
+    }
+
+    @Test
+    public void BM37() {
+        BM37 bm37 = new BM37();
+        TreeNode balanceTree = Util.getSimpleBalanceTree();
+        log.info("result={}", bm37.lowestCommonAncestor(balanceTree, 8, 6));
+    }
+
+    @Test
+    public void BM38() {
+        BM38 bm38 = new BM38();
+        TreeNode balanceTree = Util.getSimpleBalanceTree();
+        log.info("result={}", bm38.lowestCommonAncestor(balanceTree, 4, 8));
+    }
+
+    @Test
+    public void BM39() {
+
+    }
+
+    @Test
+    public void BM40() {
+        BM40 bm40 = new BM40();
+        int[] pre = {1,2,4,7,3,5,6,8};
+        int[] vin = {4,7,2,1,5,3,8,6};
+        TreeNode treeNode = bm40.reConstructBinaryTree(pre, vin);
+        log.info("result={}", Util.logTreeFirstOrder(treeNode));
     }
 
 

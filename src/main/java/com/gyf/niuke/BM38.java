@@ -61,6 +61,13 @@ public class BM38 {
         return same.val;
     }
 
+    /**
+     * 在哪边找到节点就返回哪边节点
+     * @param root
+     * @param o1
+     * @param o2
+     * @return
+     */
     private TreeNode getSameFather(TreeNode root, int o1, int o2) {
         // 这种说明没找到，找到就该提前返回的
         if (root == null) {

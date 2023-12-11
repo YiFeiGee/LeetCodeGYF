@@ -202,7 +202,12 @@ public class NiukeTest {
 
     @Test
     public void BM39() {
-
+        BM39 bm39 = new BM39();
+        TreeNode tree = Util.getSimpleTree();
+        String serialize = bm39.Serialize(tree);
+        log.info("Serialize tree={}", serialize);
+        TreeNode deserialize = bm39.Deserialize(serialize);
+        log.info("Deserialize result={}", bm39.Serialize(deserialize));
     }
 
     @Test
@@ -212,6 +217,20 @@ public class NiukeTest {
         int[] vin = {4,7,2,1,5,3,8,6};
         TreeNode treeNode = bm40.reConstructBinaryTree(pre, vin);
         log.info("result={}", Util.logTreeFirstOrder(treeNode));
+    }
+
+    @Test
+    public void BM41() {
+        BM41 bm41 = new BM41();
+        int[] pre = {1,2,4,7,3,5,6,8};
+        int[] vin = {4,7,2,1,5,3,8,6};
+        log.info("result={}", JSON.toJSONString(bm41.solve(pre, vin)));
+    }
+
+    @Test
+    public void BM42() {
+        int[] pre = {1,2,4,7,3,5,6,8};
+        log.info("copy={}", JSON.toJSONString(Arrays.copyOfRange(pre, 0,3)));
     }
 
 

@@ -12,6 +12,7 @@ public class BM20 {
     public int[] tmp;
     public int ret = 0;
     // 归并排序，归并是两两合并，合并的时候会比较子集大小，正好可以逆序对的个数
+    // 递归子问题->归并排序
     public int InversePairs (int[] nums) {
         // write code here
         if (nums == null || nums.length <= 1 ) {
@@ -44,6 +45,7 @@ public class BM20 {
             if (nums[i] < nums[j]) {
                 tmp[k++] = nums[i++];
             } else {
+                // 这里是属于逆序对
                 ret = (ret + mid- i + 1) % mod;
                 tmp[k++] = nums[j++];
             }

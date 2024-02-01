@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.function.IntFunction;
+import java.util.function.ToIntFunction;
+import java.util.stream.IntStream;
 
 @Slf4j
 public class NiukeTest {
@@ -197,7 +200,7 @@ public class NiukeTest {
     public void BM38() {
         BM38 bm38 = new BM38();
         TreeNode balanceTree = Util.getSimpleBalanceTree();
-        log.info("result={}", bm38.lowestCommonAncestor(balanceTree, 4, 8));
+        log.info("result={}", bm38.lowestCommonAncestor(balanceTree, 4, 14));
     }
 
     @Test
@@ -229,9 +232,108 @@ public class NiukeTest {
 
     @Test
     public void BM42() {
-        int[] pre = {1,2,4,7,3,5,6,8};
-        log.info("copy={}", JSON.toJSONString(Arrays.copyOfRange(pre, 0,3)));
+//        BM42 bm42 = new BM42();
+//        bm42.push(1);
+//        bm42.push(2);
+//        bm42.push(3);
+//        log.info("first pop={}", bm42.pop());
+//        bm42.push(4);
+//        log.info("second pop={}", bm42.pop());
+//        log.info("3 pop={}", bm42.pop());
+//        log.info("4 pop={}", bm42.pop());
+//        bm42.push(5);
+//        bm42.push(6);
+//        log.info("5 pop={}", bm42.pop());
+        Deque<Integer> stack = new LinkedList<>();
+        stack.offerFirst(1);
+        System.out.println(stack.peekFirst());
+        System.out.println(stack.peekFirst());
     }
+
+    @Test
+    public void BM43() {
+        BM43 bm43 = new BM43();
+        bm43.push(1);
+        bm43.push(2);
+        bm43.push(3);
+        System.out.println("top="+bm43.top());
+        System.out.println("min="+bm43.min());
+        bm43.pop();
+        System.out.println("min="+bm43.min());
+    }
+
+    @Test
+    public void BM44() {
+        BM44 bm44 = new BM44();
+        String s = "([(){])";
+        log.info("valid s, result={}", bm44.isValid(s));
+    }
+
+    @Test
+    public void BM45() {
+        BM45 bm45 = new BM45();
+        int[] arr = {2,3,4,2,6,2,5,1};
+        log.info("bm45, max arr={}", JSON.toJSONString(bm45.maxInWindows(arr,3)));
+    }
+
+    @Test
+    public void BM46() {
+        BM46 bm46 = new BM46();
+        int[] arr = {7,3,8,1,14,6};
+        log.info("bm46, arr={}", bm46.GetLeastNumbers_Solution(arr, 3));
+    }
+
+    @Test
+    public void BM47() {
+        BM47 bm47 = new BM47();
+        int[] arr = {10,10,9,9,8,7,5,6,4,3,4,2};
+        log.info("bm47, result={}", bm47.findKth(arr, 12, 4));
+    }
+
+    @Test
+    public void BM48() {
+        BM48 bm48 = new BM48();
+        int[] arr = {5,2,3,4,1,6,7,0,8};
+        for (int i : arr) {
+            bm48.Insert(i);
+            log.info("left_max = {}", JSON.toJSONString(bm48.left_max));
+            log.info("right_min = {}", JSON.toJSONString(bm48.right_min));
+            log.info("median = {}", bm48.GetMedian());
+        }
+    }
+
+    @Test
+    public void BM49() {
+        BM49 bm49 = new BM49();
+        String s = "(3+4)*(5+(2-3))";
+        log.info("bm49, result={}", bm49.solve(s));
+    }
+
+
+    @Test
+    public void BM51() {
+        BM51 bm51 = new BM51();
+        int[] arr = {1,2,3,2,2,2,5,4,2};
+        try {
+            log.info("bm51, result={}", bm51.MoreThanHalfNum_Solution(arr));
+        } catch (Exception e) {
+            log.info("exception={}", JSON.toJSONString(e));
+        }
+    }
+
+    @Test
+    public void BM52() {
+
+    }
+
+    @Test
+    public void BM54() {
+        BM54 bm54 = new BM54();
+        int[] arr = {-10,0,10,20,-10,-40};
+        log.info("result={}", JSON.toJSONString(bm54.threeSum(arr)));
+    }
+
+
 
 
 }

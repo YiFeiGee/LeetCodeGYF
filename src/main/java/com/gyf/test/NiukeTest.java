@@ -271,9 +271,10 @@ public class NiukeTest {
 
     @Test
     public void BM45() {
-        BM45 bm45 = new BM45();
+        BM45 testBm45 = new BM45();
         int[] arr = {2,3,4,2,6,2,5,1};
-        log.info("bm45, max arr={}", JSON.toJSONString(bm45.maxInWindows(arr,3)));
+        ArrayList<Integer> list = testBm45.maxInWindows(arr, 3);
+        log.info("TestBM45 results={}", JSON.toJSONString(list));
     }
 
     @Test

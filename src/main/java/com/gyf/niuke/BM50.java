@@ -13,11 +13,10 @@ public class BM50 {
      */
     public int[] twoSum (int[] numbers, int target) {
         // write code here
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {
             if (map.containsKey(target - numbers[i])) {
-                // number[i]的i一定比target-number[i]值对应下标的序号大，因为只有前面出现了，后面才能利用上这个值
-                return new int[]{map.get(target - numbers[i])+1, i+1};
+                return new int[]{map.get(target - numbers[i]), i};
             } else {
                 map.put(numbers[i], i);
             }

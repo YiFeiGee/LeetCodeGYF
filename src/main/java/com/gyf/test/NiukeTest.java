@@ -328,6 +328,13 @@ public class NiukeTest {
     }
 
     @Test
+    public void BM53() {
+        BM53 bm53 = new BM53();
+        int[] arr = {2,1,3,7,6,9,5,11};
+        log.info("bm53 result={}",bm53.minNumberDisappeared(arr));
+    }
+
+    @Test
     public void BM54() {
         BM54 bm54 = new BM54();
         int[] arr = {-10,0,10,20,-10,-40};

@@ -2,6 +2,7 @@ package com.gyf.test;
 
 import com.alibaba.fastjson.JSON;
 import com.gyf.niuke.*;
+import com.gyf.niuke.sort.*;
 import com.gyf.offer.util.ListNode;
 import com.gyf.offer.util.TreeNode;
 import com.gyf.offer.util.Util;
@@ -339,6 +340,27 @@ public class NiukeTest {
         BM54 bm54 = new BM54();
         int[] arr = {-10,0,10,20,-10,-40};
         log.info("result={}", JSON.toJSONString(bm54.threeSum(arr)));
+    }
+
+    @Test
+    public void testSort() {
+        int[] arr = {2,1,6,3,7,6,9,5,11};
+//        ShellSort sort = new ShellSort();
+//        log.info("shell sort result = {}", JSON.toJSONString(sort.shellSort(arr)));
+//        BubbleSort sort = new BubbleSort();
+//        log.info("bubble sort result={}", JSON.toJSONString(sort.bubbleSort(arr)));
+//        InsertSort insertSort = new InsertSort();
+//        log.info("insert sort result = {}", JSON.toJSONString(insertSort.insertSort(arr)));
+//        SelectSort selectSort = new SelectSort();
+//        log.info("select sort result={}", JSON.toJSONString(selectSort.selectSort(arr)));
+//        MergeSort mergeSort = new MergeSort();
+//        log.info("merge sort result={}",JSON.toJSONString(mergeSort.mergeSort(arr)));
+//        QuickSort quickSort = new QuickSort();
+//        log.info("quick sort result={}", JSON.toJSONString(quickSort.quickSort(arr)));
+//        HeapSort heapSort = new HeapSort();
+//        log.info("heap sort result={}", JSON.toJSONString(heapSort.heapSort(arr)));
+        CountSort countSort = new CountSort();
+        log.info("count sort result={}", JSON.toJSONString(countSort.countSort(arr)));
     }
 
 

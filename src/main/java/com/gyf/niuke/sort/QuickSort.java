@@ -1,6 +1,17 @@
-package com.gyf.niuke;
+package com.gyf.niuke.sort;
 
-public class QSort {
+/**
+ * 快速排序：不稳定，o(nlogn)，空间复杂度：o(logn)
+ */
+public class QuickSort {
+
+    public int[] quickSort(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+        quickSearch(arr, 0, arr.length-1);
+        return arr;
+    }
 
     public void quickSearch(int[] input, int low, int high) {
         if (low > high) {

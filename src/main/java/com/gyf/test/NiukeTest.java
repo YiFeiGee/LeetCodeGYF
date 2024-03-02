@@ -337,9 +337,11 @@ public class NiukeTest {
 
     @Test
     public void BM54() {
-        BM54 bm54 = new BM54();
-        int[] arr = {-10,0,10,20,-10,-40};
-        log.info("result={}", JSON.toJSONString(bm54.threeSum(arr)));
+//        BM54 bm54 = new BM54();
+//        int[] arr = {-10,0,10,20,-10,-40};
+//        log.info("result={}", JSON.toJSONString(bm54.threeSum(arr)));
+        List<Integer> list = new ArrayList<>();
+        log.info("{}",list.isEmpty());
     }
 
     @Test
@@ -359,8 +361,12 @@ public class NiukeTest {
 //        log.info("quick sort result={}", JSON.toJSONString(quickSort.quickSort(arr)));
 //        HeapSort heapSort = new HeapSort();
 //        log.info("heap sort result={}", JSON.toJSONString(heapSort.heapSort(arr)));
-        CountSort countSort = new CountSort();
-        log.info("count sort result={}", JSON.toJSONString(countSort.countSort(arr)));
+//        CountSort countSort = new CountSort();
+//        log.info("count sort result={}", JSON.toJSONString(countSort.countSort(arr)));
+//        BucketSort bucketSort = new BucketSort();
+//        log.info("bucket sort result={}", JSON.toJSONString(bucketSort.bucketSort(arr, 4)));
+        RadixSort sort = new RadixSort();
+        log.info("radix sort result = {}", JSON.toJSONString(sort.radixSort(arr)));
     }
 
 
